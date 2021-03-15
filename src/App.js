@@ -8,6 +8,8 @@ class App extends Component {
     super(props);
     this.state = {
       sessions: [],
+      bands: [],
+      users: [],
       username: '',
       password: '',
     };
@@ -17,17 +19,30 @@ class App extends Component {
   };
   getSessionList = async () => {
     const response = await axios.get('http://localhost:3001/session/all');
+    console.log(response);
     this.setState({
       sessions: response.data,
     });
   };
+  componentDidMount = () => {
+    this.getBandList();
+  };
+  getBandList = async () => {
+    const response = await axios.get('http://localhost:3001/band/all');
+    console.log(response);
+    this.setState({
+      band: response.data,
+    });
+  };
   
   render() {
-    const session = this.state.sessions.map((session) => {
+    const sessions = this.state.sessions.map((session) => {
       return (
+       
         <div>
           <p>Test, it works</p>
-          <h3>{session.sessionName}</h3>
+          <h3>{session.sessionName}, {session.sessionLocation}, {session.sessionDate}</h3><br></br>
+         
           {/* <img src={city.img} alt='city' />
           <p>
             {city.state}, {city.country}
@@ -54,7 +69,7 @@ class App extends Component {
           />
           <input type='submit' value='Login' />
         </form>
-        {/* {cities} */}
+        {sessions}
       </div>
     );
   }
