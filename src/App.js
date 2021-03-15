@@ -16,6 +16,10 @@ class App extends Component {
   }
   componentDidMount = () => {
     this.getSessionList();
+    this.getBandList();
+    this.loginOnChange();
+    this.login();
+    
   };
   getSessionList = async () => {
     const response = await axios.get('http://localhost:3001/session/all');
@@ -24,9 +28,7 @@ class App extends Component {
       sessions: response.data,
     });
   };
-  componentDidMount = () => {
-    this.getBandList();
-  };
+ 
   getBandList = async () => {
     const response = await axios.get('http://localhost:3001/band/all');
     console.log(response);
@@ -34,7 +36,25 @@ class App extends Component {
       band: response.data,
     });
   };
-  
+
+  loginOnChange = (e) => {
+    e.preventDefault();
+    this.setState({
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  login = async (e) => {
+    e.preventDefault();
+    const data = {
+      username: this.state.username,
+      password: this.state.password,
+    };
+    console.log(data);
+    const response = await axios.post('http://localhost:3001/user/login', data);
+    console.log(response);
+  }
+
   render() {
     const sessions = this.state.sessions.map((session) => {
       return (
@@ -52,6 +72,7 @@ class App extends Component {
     });
     return (
       <div className='App'>
+        <h3>Login</h3>
         <form onSubmit={this.login}>
           <input
             name='username'
@@ -74,4 +95,5 @@ class App extends Component {
     );
   }
 }
+
 export default App;
