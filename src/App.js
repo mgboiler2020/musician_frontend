@@ -17,8 +17,10 @@ class App extends Component {
   componentDidMount = () => {
     this.getSessionList();
     this.getBandList();
+    this.getUserList();
     this.loginOnChange();
     this.login();
+    // this.signup();
     
   };
   getSessionList = async () => {
@@ -37,8 +39,16 @@ class App extends Component {
     });
   };
 
-  loginOnChange = (e) => {
-    e.preventDefault();
+  getUserList = async () => {
+    const response = await axios.get('http://localhost:3001/user/all');
+    console.log(response);
+    this.setState({
+      band: response.data,
+    });
+  };
+
+  loginOnChange = () => {
+    // e.preventDefault();
     this.setState({
       [e.target.name]: e.target.value,
     });
@@ -62,11 +72,6 @@ class App extends Component {
         <div>
           <p>Test, it works</p>
           <h3>{session.sessionName}, {session.sessionLocation}, {session.sessionDate}</h3><br></br>
-         
-          {/* <img src={city.img} alt='city' />
-          <p>
-            {city.state}, {city.country}
-          </p> */}
         </div>
       );
     });
