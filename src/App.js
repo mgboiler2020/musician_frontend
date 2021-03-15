@@ -7,62 +7,31 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      cities: ,
+      sessions: [],
       username: '',
       password: '',
     };
   }
   componentDidMount = () => {
-    this.getCities();
+    this.getSessionList();
   };
-  getCities = async () => {
-    const response = await axios.get('http://localhost:3001/city/all');
+  getSessionList = async () => {
+    const response = await axios.get('http://localhost:3001/session/all');
     this.setState({
-      cities: response.data,
+      sessions: response.data,
     });
   };
-  loginOnChange = (e) => {
-    e.preventDefault();
-    this.setState({
-      [e.target.name]: e.target.value,
-    });
-  };
-  login = async (e) => {
-    e.preventDefault();
-    const data = {
-      username: this.state.username,
-      password: this.state.password,
-    };
-    console.log(data);
-    const response = await axios.post('http://localhost:3001/auth/login', data);
-    console.log(response);
-  };
-
-  signUpOnChange = (e) => {
-    e.preventDefault();
-    this.setState({
-      [e.target.name]: e.target.value,
-    });
-  };
-  login = async (e) => {
-    e.preventDefault();
-    const data = {
-      username: this.state.username,
-      password: this.state.password,
-    };
-    console.log(data);
-    const response = await axios.post('http://localhost:3001/auth/login', data);
-    console.log(response);
-  };
+  
   render() {
-    const cities = this.state.cities.map((city) => {
+    const session = this.state.sessions.map((session) => {
       return (
         <div>
-          <h3>{city.name}</h3>
-          <img src={city.img} alt='city' />
+          <p>Test, it works</p>
+          <h3>{session.sessionName}</h3>
+          {/* <img src={city.img} alt='city' />
           <p>
             {city.state}, {city.country}
-          </p>
+          </p> */}
         </div>
       );
     });
@@ -85,7 +54,7 @@ class App extends Component {
           />
           <input type='submit' value='Login' />
         </form>
-        {cities}
+        {/* {cities} */}
       </div>
     );
   }
