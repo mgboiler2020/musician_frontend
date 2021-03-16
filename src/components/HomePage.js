@@ -9,7 +9,49 @@ function HomePage (props) {
     <div>
       <p>Testing</p>
       {/* {session.sessionName} */}
-    </div>
+
+      <div className='App'>
+      
+        <h3>Login</h3>
+        <form onSubmit={this.login}>
+          <input
+            name='username'
+            type='text'
+            placeholder='username'
+            value={this.state.username}
+            onChange={this.loginOnChange}
+          />
+          <input
+            name='password'
+            type='password'
+            placeholder='password'
+            value={this.state.password}
+            onChange={this.loginOnChange}
+          />
+          <input type='submit' value='Login' />
+        </form>
+        <br></br>
+        <h6>Sign Up</h6>
+        <form onSubmit={this.signup}>
+          <input type='text' name='name' type='text' placeholder='name'/><br></br>
+          <input username='username' type='text' placeholder='new username'/><br></br>
+            <input password='password' type='text' placeholder='new password'/><br></br>
+            <input location='location' type='text' placeholder='your location'/><br></br>
+            <input skills='skills' type='text' placeholder='list your skills'/><br></br>
+            <input currentprojects='currentProjects' type='text' placeholder='current projects?'/><br></br>
+            <input pastprojects='pastProjects' type='text' placeholder='past projects?'/><br></br>
+            <input genre='pastProjects' type='text' placeholder='what genre?'/><br></br>
+            
+            <input type='submit' value='Signup'/>
+            </form>
+        {/* {sessions} */}
+      </div>
+    );
+  {/* }
+} */}
+        {/* {sessions} */}
+      </div>
+    // </div>
   )
 }
 // function HomePage (props) {
