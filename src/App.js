@@ -32,7 +32,7 @@ class App extends Component {
     this.getUserList();
     // this.loginOnChange();
     // this.login();
-    // // this.signup();
+    this.signup();
     
   };
   getSessionList = async () => {
@@ -78,6 +78,7 @@ class App extends Component {
   }
 
   signup = async () => {
+    console.log("signing up");
     const data = {
       name: this.state.name,
       username: this.state.username,
@@ -105,29 +106,7 @@ class App extends Component {
     // });
     return (
       <div className='App'>
-        <header>
-          <h1>MusicianBook</h1>
-          <div className='header'>
-            <Link className='return-to-HomePage' to="/">Return to Home Page</Link>
-          </div>
-          </header>
-          <main>
-            <Route exact path='/' render={() => (
-              <HomePage signup={this.signup}/> 
-            )} />
-            <Route exact path='/' render={() => (
-              <UserProfile username={this.getUserList}/> 
-            )} />
-            <Route exact path='/' render={() => (
-              <SessionPage sessions={this.getSessionList}/> 
-            )} />
-            <Route exact path='/' render={() => (
-              <LoginPage login={this.login}/>
-            )} />
-            <Route exact path='/' render={() => (
-              <BandPage bands={this.getBandList}/> 
-            )} />
-          </main>
+        
         
         
         
@@ -156,13 +135,13 @@ class App extends Component {
         <h6>Sign Up</h6>
         <form onSubmit={this.signup}>
           <input name='name' type='text' placeholder='name'/><br></br>
-          <input username='username' type='text' placeholder='new username' value={this.state.username} onChange={this.loginOnChange}/><br></br>
-            <input password='password' type='text' placeholder='new password' value={this.state.password} onChange={this.loginOnChange}/><br></br>
-            <input location='location' type='text' placeholder='your location' value={this.state.location} onChange={this.loginOnChange}/><br></br>
-            <input skills='skills' type='text' placeholder='list your skills' value={this.state.skills} onChange={this.loginOnChange}/><br></br>
-            <input currentprojects='currentProjects' type='text' placeholder='current projects?' value={this.state.currentProjects} onChange={this.loginOnChange}/><br></br>
-            <input pastprojects='pastProjects' type='text' placeholder='past projects?' value={this.state.pastProjects} onChange={this.loginOnChange}/><br></br>
-            <input genre='pastProjects' type='text' placeholder='what genre?' value={this.state.genre} onChange={this.loginOnChange}/><br></br>
+          <input name='username' type='text' placeholder='new username' onChange={this.loginOnChange}/><br></br>
+            <input name='password' type='text' placeholder='new password' onChange={this.loginOnChange}/><br></br>
+            <input name='location' type='text' placeholder='your location'  onChange={this.loginOnChange}/><br></br>
+            <input name='skills' type='text' placeholder='list your skills'  onChange={this.loginOnChange}/><br></br>
+            <input name='currentProjects' type='text' placeholder='current projects?'  onChange={this.loginOnChange}/><br></br>
+            <input name='pastProjects' type='text' placeholder='past projects?' onChange={this.loginOnChange}/><br></br>
+            <input name='genre' type='text' placeholder='what genre?' onChange={this.loginOnChange}/><br></br>
             
             <input type='submit' value='Signup'/>
             </form>
