@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
+import { Route, Link, withRouter } from 'react-router-dom';
 import axios from 'axios';
 import logo from './logo.svg';
 import './App.css';
+
 import HomePage from './components/HomePage';
 import UserProfile from './components/UserProfile';
 import BandPage from './components/BandPage';
-import SessionPage from './components/SessionPage'
+import SessionPage from './components/SessionPage';
+import LoginPage from './components/LoginPage';
 
 class App extends Component {
   constructor(props) {
@@ -105,7 +108,7 @@ class App extends Component {
         <header>
           <h1>MusicianBook</h1>
           <div className='header'>
-            <Link className='return-to-HomePage' to='/'>Return to Home Page</Link>
+            <Link className='return-to-HomePage' to="/">Return to Home Page</Link>
           </div>
           </header>
           <main>
@@ -169,4 +172,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default withRouter (App);
