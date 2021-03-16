@@ -10,10 +10,12 @@
     "bootstrap": "^4.6.0",
     "react": "^17.0.1",
     "react-bootstrap": "^1.5.2",
+    "react-document-title": "^2.0.3",
     "react-dom": "^17.0.1",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
+    "react-stormpath": "^2.0.1",
     "web-vitals": "^1.1.0"
   },
   "scripts": {

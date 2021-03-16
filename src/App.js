@@ -55,7 +55,7 @@ class App extends Component {
     const response = await axios.get('http://localhost:3001/user/all');
     console.log(response);
     this.setState({
-      band: response.data,
+      users: response.data,
     });
   };
 
@@ -134,7 +134,7 @@ class App extends Component {
         </form><br></br>
         <h6>Sign Up</h6>
         <form onSubmit={this.signup}>
-          <input name='name' type='text' placeholder='name'/><br></br>
+          <input name='name' type='text' placeholder='name' onChange={this.loginOnChange}/><br></br>
           <input name='username' type='text' placeholder='new username' onChange={this.loginOnChange}/><br></br>
             <input name='password' type='text' placeholder='new password' onChange={this.loginOnChange}/><br></br>
             <input name='location' type='text' placeholder='your location'  onChange={this.loginOnChange}/><br></br>
@@ -152,3 +152,11 @@ class App extends Component {
 }
 
 export default withRouter (App);
+
+
+//use this as template when adding routers in app.js
+
+// <Router history={browserHistory}>
+//   <Route path='/' component={MasterPage}>
+//   </Route>
+// </Router>

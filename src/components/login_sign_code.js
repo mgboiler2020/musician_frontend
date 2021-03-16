@@ -11,7 +11,7 @@
             <Route exact path='/' render={() => (
               <UserProfile username={this.getUserList}/> 
             )} />
-            <Route exact path='/' render={() => (
+            <Route exact path='/all' render={() => (
               <SessionPage sessions={this.getSessionList}/> 
             )} />
             <Route exact path='/' render={() => (
