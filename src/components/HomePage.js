@@ -33,14 +33,14 @@ function HomePage (props) {
         <br></br>
         <h6>Sign Up</h6>
         <form onSubmit={this.signup}>
-          <input type='text' name='name' type='text' placeholder='name'/><br></br>
-          <input username='username' type='text' placeholder='new username'/><br></br>
-            <input password='password' type='text' placeholder='new password'/><br></br>
-            <input location='location' type='text' placeholder='your location'/><br></br>
-            <input skills='skills' type='text' placeholder='list your skills'/><br></br>
-            <input currentprojects='currentProjects' type='text' placeholder='current projects?'/><br></br>
-            <input pastprojects='pastProjects' type='text' placeholder='past projects?'/><br></br>
-            <input genre='pastProjects' type='text' placeholder='what genre?'/><br></br>
+          <input name='name' type='text' placeholder='name'/><br></br>
+          <input username='username' type='text' placeholder='new username' value={this.state.username} onChange={this.loginOnChange}/><br></br>
+            <input password='password' type='text' placeholder='new password' value={this.state.password} onChange={this.loginOnChange}/><br></br>
+            <input location='location' type='text' placeholder='your location' value={this.state.location} onChange={this.loginOnChange}/><br></br>
+            <input skills='skills' type='text' placeholder='list your skills' value={this.state.skills} onChange={this.loginOnChange}/><br></br>
+            <input currentprojects='currentProjects' type='text' placeholder='current projects?' value={this.state.currentProjects} onChange={this.loginOnChange}/><br></br>
+            <input pastprojects='pastProjects' type='text' placeholder='past projects?' value={this.state.pastProjects} onChange={this.loginOnChange}/><br></br>
+            <input genre='pastProjects' type='text' placeholder='what genre?' value={this.state.genre} onChange={this.loginOnChange}/><br></br>
             
             <input type='submit' value='Signup'/>
             </form>
