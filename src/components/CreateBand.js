@@ -14,7 +14,7 @@ function CreateBand (props) {
       
         <br></br>
         <h4>Create Your Band Profile</h4>
-        <p>Enter your info below</p>
+        <p>(Enter your info below)</p>
         <form onSubmit={props.createBand}>
             <input name='bandName' type='text' placeholder='band name' onChange={props.loginOnChange}/><br></br>           
             <input name='showDates' type='text' placeholder='showDates' onChange={props.loginOnChange}/><br></br>

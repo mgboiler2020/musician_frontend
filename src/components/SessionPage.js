@@ -14,7 +14,7 @@ const SessionPage = (props) => {
 
             <div className='session-grid-list' key={sessions.id} onClick={(e) => {props.selectSessionById(e, sessions.id)}}>
                 <h5>Session Info</h5>
-                
+                <p>Enter your info below</p>
                 <h6>NAME - {sessions.sessionName}</h6>
                 <h6>LOCATION - {sessions.sessionLocation}</h6>
                 <h6>DATE - {sessions.sessionDate}</h6>

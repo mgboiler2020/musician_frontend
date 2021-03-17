@@ -11,6 +11,7 @@ import CreateBand from './components/CreateBand';
 import SessionPage from './components/SessionPage';
 import CreateSession from './components/CreateSession';
 import LoginPage from './components/LoginPage';
+import { findRenderedDOMComponentWithClass } from 'react-dom/test-utils';
 
 class App extends Component {
   constructor(props) {
@@ -129,14 +130,16 @@ class App extends Component {
       };
       const response = await axios.post('http://localhost:3001/session/createSession', data);
     }
-    // selectUserById=async(e,id)=>{
-    //   e.preventDefault();
-    //   const selectUser=await axios.get('http://localhost:3001/user/all', data);
-    //   this.setState({
-    //     selectUser: selectUser.data.users[0]
-    //   })
-    //   this.props.history.push('/profile/' + id);
-    // }
+    
+    selectUserById=async(e,id)=>{
+      e.preventDefault();
+      const data = [];
+      const selectUser = await axios.get('http://localhost:3001/user/all', data);
+      this.setState({
+        selectUser: selectUser.data.users.id
+      })
+      this.props.history.push('/profile/' + id);
+    }
 
   render() {
     // const sessions = this.state.sessions.map((session) => {
@@ -176,6 +179,7 @@ class App extends Component {
             )} />
             <Route exact path='/all' render={() => (
               <UserProfile getUserList={this.getUserList}
+              selectUserById={this.selectUserById}
               users={this.state.users}/> 
             )} />
             <Route path='/sessions' render={() => (

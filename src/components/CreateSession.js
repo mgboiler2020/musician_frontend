@@ -13,7 +13,8 @@ function CreateSession (props) {
       <div className='App'>
       
         <br></br>
-        <h6>Create a Session</h6>
+        <h4>Create a Session</h4>
+        <p>(Enter your info below)</p>
         <form onSubmit={props.createSession}>
             <input name='sessionName' type='text' placeholder='session name' onChange={props.loginOnChange}/><br></br>           
             <input name='sessionDate' type='text' placeholder='session date' onChange={props.loginOnChange}/><br></br>
