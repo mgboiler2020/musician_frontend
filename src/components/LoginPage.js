@@ -1,20 +1,40 @@
-// import React, { Component } from 'react';
-// import DocumentTitle from 'react-document-title';
-// import Form from 'react-bootstrap/Form';
+import React from 'react';
+import axios from 'axios';
+import { Route, Link } from 'react-router-dom';
+// import styled, { keyframes } from 'styled-components';
+// import { pulse } from 'react-animations';
 
+function LoginPage (props) {
+    // console.log(props);
+  return (
+    <div>
+      
 
-// class LoginPage extends Component {
-//     contructor(props) {
-//         super(props);
-//         this.state= {
+      <div className='App'>
+      <h6>Login</h6>
+        <form onSubmit={props.login}>
+          <input
+            name='username'
+            type='text'
+            placeholder='username'
+            value={props.username}
+            onChange={props.loginOnChange}
+          />
+          <input
+            name='password'
+            type='password'
+            placeholder='password'
+            value={props.password}
+            onChange={props.loginOnChange}
+          />
+          <input type='submit' value='Login' />
+        </form>
+        
+      </div>
+    </div>
+    
+  )
+}
 
-//         };
-//     }
-
-//     render() {
-//         return (
-
-//         )
-//     }
-// }
+export default LoginPage;
 

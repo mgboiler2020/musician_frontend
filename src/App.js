@@ -38,7 +38,7 @@ class App extends Component {
   };
   getSessionList = async () => {
     const response = await axios.get('http://localhost:3001/session/all');
-    console.log(response);
+    // console.log(response);
     this.setState({
       sessions: response.data,
     });
@@ -46,7 +46,7 @@ class App extends Component {
  
   getBandList = async () => {
     const response = await axios.get('http://localhost:3001/band/all');
-    console.log(response);
+    // console.log(response);
     this.setState({
       band: response.data,
     });
@@ -54,7 +54,7 @@ class App extends Component {
 
   getUserList = async () => {
     const response = await axios.get('http://localhost:3001/user/all');
-    console.log(response);
+    // console.log(response);
     this.setState({
       users: response.data,
     });
@@ -62,8 +62,8 @@ class App extends Component {
 
   loginOnChange = (e) => {
     e.preventDefault();
-    console.log(e.target.name)
-    console.log(e.target.value)
+    // console.log(e.target.name)
+    // console.log(e.target.value)
     this.setState({
       [e.target.name]: e.target.value,
     });
@@ -82,7 +82,7 @@ class App extends Component {
 
   signup = async () => {
     // e.preventDefault();
-    console.log("signing up");
+    // console.log("signing up");
     const data = {
       name: this.state.name,
       username: this.state.username,
@@ -91,12 +91,12 @@ class App extends Component {
       skills: this.state.skills,
       currentProjects: this.state.currentProjects,
       pastProjects: this.state.pastProjects,
+      genre: this.state.genre,
     };
-    console.log(data);
+    // console.log(data);
     const response = await axios.post('http://localhost:3001/user/signup', data);
-    console.log(response);
+    // console.log(response);
     }
-  
 
   render() {
     // const sessions = this.state.sessions.map((session) => {
@@ -114,7 +114,7 @@ class App extends Component {
           <h1>MusicianBook</h1>
           <div className='header'>
             <Link className='return-to-HomePage' to="/">Return to Home Page</Link><br></br>
-            <Link className='return-to-HomePage' to="/">Return to Login Page</Link>
+            <Link className='return-to-HomePage' to="/login">Return to Login Page</Link>
           </div>
           </header>
           <main>
@@ -123,15 +123,18 @@ class App extends Component {
               loginOnChange={this.loginOnChange}
                 name={this.state.name}/> 
             )} />
-            {/* <Route exact path='/' render={() => (
+            <Route exact path='/login' render={() => (
+             <LoginPage login={this.login}
+             loginOnChange={this.loginOnChange}/>
+            )} />
+            {/* <Route exact path='/all' render={() => (
               <UserProfile username={this.getUserList}/> 
             )} />
             <Route path='/all' render={() => (
               <SessionPage sessions={this.getSessionList}/> 
             )} />
-            <Route exact path='/' render={() => (
-              <LoginPage login={this.login}/>
-            )} />
+            
+             
             <Route exact path='/' render={() => (
               <BandProfile bands={this.getBandList}/> 
             )} /> */}

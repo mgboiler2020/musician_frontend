@@ -5,7 +5,7 @@ import { Route, Link } from 'react-router-dom';
 // import { pulse } from 'react-animations';
 
 function HomePage (props) {
-    console.log(props);
+    // console.log(props);
   return (
     <div>
       
@@ -22,23 +22,14 @@ function HomePage (props) {
             <input name='skills' type='text' placeholder='list your skills'  onChange={props.loginOnChange}/><br></br>
             <input name='currentProjects' type='text' placeholder='current projects?'  onChange={props.loginOnChange}/><br></br>
             <input name='pastProjects' type='text' placeholder='past projects?' onChange={props.loginOnChange}/><br></br>
+            <input name='genre' type='text' placeholder='genre' onChange={props.loginOnChange}/>
             <br></br>
             <input type='submit' value='Signup'/>
         </form>
-        
       </div>
-    
-
-
-       
-      </div>
+    </div>
     
   )
 }
-
-
-
-
-
 
 export default HomePage;
