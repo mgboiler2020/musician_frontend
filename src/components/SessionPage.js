@@ -10,9 +10,11 @@ const SessionPage = (props) => {
     const sessions = props.sessions.map((sessions) => {
         return (
            
+            
+
             <div className='session-grid-list' key={sessions.id} onClick={(e) => {props.selectSessionById(e, sessions.id)}}>
-                <h3>Scheduled Sessions</h3>
-                <br></br>
+                <h5>Session Info</h5>
+                
                 <h6>NAME - {sessions.sessionName}</h6>
                 <h6>LOCATION - {sessions.sessionLocation}</h6>
                 <h6>DATE - {sessions.sessionDate}</h6>

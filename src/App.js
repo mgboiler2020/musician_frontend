@@ -7,6 +7,7 @@ import './App.css';
 import HomePage from './components/HomePage';
 import UserProfile from './components/UserProfile';
 import BandProfile from './components/BandProfile';
+import CreateBand from './components/CreateBand';
 import SessionPage from './components/SessionPage';
 import LoginPage from './components/LoginPage';
 
@@ -25,6 +26,10 @@ class App extends Component {
       currentProjects: '',
       pastProjects: '',
       genre: '',
+      bandName: '',
+      showDates: '',
+      location: '',
+
     };
   }
   componentDidMount = () => {
@@ -48,7 +53,7 @@ class App extends Component {
     const response = await axios.get('http://localhost:3001/band/all');
     // console.log(response);
     this.setState({
-      band: response.data,
+      bands: response.data,
     });
   };
 
@@ -97,6 +102,20 @@ class App extends Component {
     const response = await axios.post('http://localhost:3001/user/signup', data);
     // console.log(response);
     }
+
+    createBand = async () => {
+      const data = {
+        bandName: this.state.bandName,
+        showDates: this.state.showDates,
+        location: this.state.location,
+        currentProjects: this.state.currentProjects,
+        pastProjects: this.state.pastProjects,
+        genre: this.state.genre,
+
+
+      };
+      const response = await axios.post('http://localhost:3001/band/createBand', data);
+    }
     // selectUserById=async(e,id)=>{
     //   e.preventDefault();
     //   const selectUser=await axios.get('http://localhost:3001/user/all', data);
@@ -124,7 +143,10 @@ class App extends Component {
             <Link className='return-to-HomePage' to="/">Return to Sign Up</Link><br></br>
             <Link className='return-to-HomePage' to="/login">Return to Login</Link><br></br>
             <Link className='return-to-HomePage' to="/all">User Profiles</Link><br></br>
-            <Link className='return-to-HomePage' to="/session">Sessions Page</Link><br></br><br></br>
+            <Link className='return-to-HomePage' to="/bands">Band Profiles</Link><br></br>
+            <Link className='return-to-HomePage' to="/sessions">Sessions Page</Link><br></br>
+            <Link className='return-to-HomePage' to="/createBand">Create Band</Link><br></br>
+            <br></br>
           </div>
           </header>
           <main>
@@ -141,13 +163,19 @@ class App extends Component {
               <UserProfile getUserList={this.getUserList}
               users={this.state.users}/> 
             )} />
-            <Route path='/session' render={() => (
+            <Route path='/sessions' render={() => (
               <SessionPage getSessionList={this.getSessionList}
               sessions={this.state.sessions}/> 
             )} />
-            {/* <Route exact path='/' render={() => (
-              <BandProfile bands={this.getBandList}/> 
-            )} /> */} */}
+            <Route exact path='/bands' render={() => (
+              <BandProfile getBandList={this.getBandList}
+              bands={this.state.bands}/> 
+            )} />
+             <Route exact path='/createBand' render={() => (
+              <CreateBand createBand={this.createBand}
+              loginOnChange={this.loginOnChange}
+              bands={this.state.bands}/> 
+            )} />
           </main>
         
         
