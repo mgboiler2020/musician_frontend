@@ -131,7 +131,7 @@ class App extends Component {
       const response = await axios.post('http://localhost:3001/session/createSession', data);
     }
     
-    selectUserById=async(e,id)=>{
+    selectUserById=async(e,id)=> {
       e.preventDefault();
       const data = [];
       const selectUser = await axios.get('http://localhost:3001/user/all', data);
