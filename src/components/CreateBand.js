@@ -20,7 +20,7 @@ function CreateBand (props) {
             <input name='showDates' type='text' placeholder='showDates' onChange={props.loginOnChange}/><br></br>
             <input name='location' type='text' placeholder='band location' onChange={props.loginOnChange}/><br></br> 
             <input name='currentProjects' type='text' placeholder='current projects?'  onChange={props.loginOnChange}/><br></br>
-            <input name='pastProjects' type='text' placeholder='any ablbums?' onChange={props.loginOnChange}/><br></br>
+            <input name='pastProjects' type='text' placeholder='any albums?' onChange={props.loginOnChange}/><br></br>
             <input name='genre' type='text' placeholder='genre' onChange={props.loginOnChange}/>
             <br></br>
             <br></br>
