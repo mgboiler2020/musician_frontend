@@ -13,7 +13,7 @@ function CreateBand (props) {
       <div className='App'>
       
         <br></br>
-        <h6>Create a Band</h6>
+        <h6>Create Your Band Profile</h6>
         <form onSubmit={props.createBand}>
             <input name='bandName' type='text' placeholder='band name' onChange={props.loginOnChange}/><br></br>           
             <input name='showDates' type='text' placeholder='showDates' onChange={props.loginOnChange}/><br></br>
@@ -21,6 +21,7 @@ function CreateBand (props) {
             <input name='currentProjects' type='text' placeholder='current projects?'  onChange={props.loginOnChange}/><br></br>
             <input name='pastProjects' type='text' placeholder='any ablbums?' onChange={props.loginOnChange}/><br></br>
             <input name='genre' type='text' placeholder='genre' onChange={props.loginOnChange}/>
+            <br></br>
             <br></br>
             <input type='submit' value='Create Band'/>
             <br></br>

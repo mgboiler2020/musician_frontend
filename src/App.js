@@ -9,6 +9,7 @@ import UserProfile from './components/UserProfile';
 import BandProfile from './components/BandProfile';
 import CreateBand from './components/CreateBand';
 import SessionPage from './components/SessionPage';
+import CreateSession from './components/CreateSession';
 import LoginPage from './components/LoginPage';
 
 class App extends Component {
@@ -29,6 +30,10 @@ class App extends Component {
       bandName: '',
       showDates: '',
       location: '',
+      sessionName: '',
+      sessionDate: '',
+      sessionLocation: '',
+
 
     };
   }
@@ -111,10 +116,18 @@ class App extends Component {
         currentProjects: this.state.currentProjects,
         pastProjects: this.state.pastProjects,
         genre: this.state.genre,
-
-
       };
       const response = await axios.post('http://localhost:3001/band/createBand', data);
+    }
+
+    createSession = async () => {
+      const data = {
+        sessionName: this.state.sessionName,
+        genre: this.state.genre,
+        sessionDate: this.state.sessionDate,
+        sessionLocation: this.state.sessionLocation,
+      };
+      const response = await axios.post('http://localhost:3001/session/createSession', data);
     }
     // selectUserById=async(e,id)=>{
     //   e.preventDefault();
@@ -144,8 +157,10 @@ class App extends Component {
             <Link className='return-to-HomePage' to="/login">Return to Login</Link><br></br>
             <Link className='return-to-HomePage' to="/all">User Profiles</Link><br></br>
             <Link className='return-to-HomePage' to="/bands">Band Profiles</Link><br></br>
-            <Link className='return-to-HomePage' to="/sessions">Sessions Page</Link><br></br>
             <Link className='return-to-HomePage' to="/createBand">Create Band</Link><br></br>
+            <Link className='return-to-HomePage' to="/sessions">Sessions Page</Link><br></br>
+            <Link className='return-to-HomePage' to="/createSession">Create Session</Link><br></br>
+            
             <br></br>
           </div>
           </header>
@@ -175,6 +190,11 @@ class App extends Component {
               <CreateBand createBand={this.createBand}
               loginOnChange={this.loginOnChange}
               bands={this.state.bands}/> 
+            )} />
+            <Route exact path='/createSession' render={() => (
+              <CreateSession createSession={this.createSession}
+              loginOnChange={this.loginOnChange}
+              sessions={this.state.sessions}/> 
             )} />
           </main>
         
