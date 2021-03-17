@@ -123,7 +123,8 @@ class App extends Component {
           <div className='header'>
             <Link className='return-to-HomePage' to="/">Return to Sign Up</Link><br></br>
             <Link className='return-to-HomePage' to="/login">Return to Login</Link><br></br>
-            <Link className='return-to-HomePage' to="/all">User Profiles</Link><br></br><br></br>
+            <Link className='return-to-HomePage' to="/all">User Profiles</Link><br></br>
+            <Link className='return-to-HomePage' to="/session">Sessions Page</Link><br></br><br></br>
           </div>
           </header>
           <main>
@@ -140,16 +141,13 @@ class App extends Component {
               <UserProfile getUserList={this.getUserList}
               users={this.state.users}/> 
             )} />
-
-
-            {/* <Route path='/all' render={() => (
-              <SessionPage sessions={this.getSessionList}/> 
+            <Route path='/session' render={() => (
+              <SessionPage getSessionList={this.getSessionList}
+              sessions={this.state.sessions}/> 
             )} />
-            
-             
-            <Route exact path='/' render={() => (
+            {/* <Route exact path='/' render={() => (
               <BandProfile bands={this.getBandList}/> 
-            )} /> */}
+            )} /> */} */}
           </main>
         
         
