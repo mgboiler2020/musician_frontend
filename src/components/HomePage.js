@@ -13,7 +13,8 @@ function HomePage (props) {
       <div className='App'>
       
         <br></br>
-        <h6>Sign Up</h6>
+        <h4>Sign Up</h4>
+        <p>Enter your info below</p>
         <form onSubmit={props.signup}>
             <input name='name' type='text' placeholder='name' onChange={props.loginOnChange}/><br></br>           
             <input name='username' type='text' placeholder='new username' onChange={props.loginOnChange}/><br></br>
@@ -23,6 +24,7 @@ function HomePage (props) {
             <input name='currentProjects' type='text' placeholder='current projects?'  onChange={props.loginOnChange}/><br></br>
             <input name='pastProjects' type='text' placeholder='any ablbums?' onChange={props.loginOnChange}/><br></br>
             <input name='genre' type='text' placeholder='genre' onChange={props.loginOnChange}/>
+            <br></br>
             <br></br>
             <input type='submit' value='Signup'/>
         </form>

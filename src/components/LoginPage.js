@@ -16,14 +16,14 @@ function LoginPage (props) {
           <input
             name='username'
             type='text'
-            placeholder='username'
+            placeholder='enter username'
             value={props.username}
             onChange={props.loginOnChange}
           />
           <input
             name='password'
             type='password'
-            placeholder='password'
+            placeholder='enter password'
             value={props.password}
             onChange={props.loginOnChange}
           />
