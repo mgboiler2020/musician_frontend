@@ -34,6 +34,8 @@ class App extends Component {
       sessionName: '',
       sessionDate: '',
       sessionLocation: '',
+      id: [],
+     
 
 
     };
@@ -67,7 +69,7 @@ class App extends Component {
     const response = await axios.get('http://localhost:3001/user/all');
     // console.log(response);
     this.setState({
-      users: response.data,
+      users: response.data
     });
   };
 
@@ -131,33 +133,28 @@ class App extends Component {
       const response = await axios.post('http://localhost:3001/session/createSession', data);
     }
     
-    selectUserById=async(e,id)=> {
+    selectUserById = async (e,id)=> {
       e.preventDefault();
-      const data = [];
-      const selectUser = await axios.get('http://localhost:3001/user/all', data);
+     
+      const selectUser = await axios.get('http://localhost:3001/user/select', id);
       this.setState({
-        selectUser: selectUser.data.users.id
+        selectUser: response
+          
       })
       this.props.history.push('/profile/' + id);
+      
     }
 
   render() {
-    // const sessions = this.state.sessions.map((session) => {
-    //   return (
-       
-    //     <div>
-    //       <p>Test, it works</p>
-    //       <h3>{session.sessionName}, {session.sessionLocation}, {session.sessionDate}</h3><br></br>
-    //     </div>
-    //   );
-    // });
+    
+      
     return (
       <div className='App'>
         <header>
           <h1>MusicianBook</h1>
           <div className='header'>
-            <Link className='return-to-HomePage' to="/">Return to Sign Up</Link><br></br>
-            <Link className='return-to-HomePage' to="/login">Return to Login</Link><br></br>
+            <Link className='return-to-HomePage' to="/">Sign Up</Link><br></br>
+            <Link className='return-to-HomePage' to="/login">Login</Link><br></br>
             <Link className='return-to-HomePage' to="/all">User Profiles</Link><br></br>
             <Link className='return-to-HomePage' to="/bands">Band Profiles</Link><br></br>
             <Link className='return-to-HomePage' to="/createBand">Create Band</Link><br></br>
