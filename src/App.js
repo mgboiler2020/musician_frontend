@@ -97,6 +97,14 @@ class App extends Component {
     const response = await axios.post('http://localhost:3001/user/signup', data);
     // console.log(response);
     }
+    // selectUserById=async(e,id)=>{
+    //   e.preventDefault();
+    //   const selectUser=await axios.get('http://localhost:3001/user/all', data);
+    //   this.setState({
+    //     selectUser: selectUser.data.users[0]
+    //   })
+    //   this.props.history.push('/profile/' + id);
+    // }
 
   render() {
     // const sessions = this.state.sessions.map((session) => {
@@ -113,8 +121,9 @@ class App extends Component {
         <header>
           <h1>MusicianBook</h1>
           <div className='header'>
-            <Link className='return-to-HomePage' to="/">Return to Home Page</Link><br></br>
-            <Link className='return-to-HomePage' to="/login">Return to Login Page</Link>
+            <Link className='return-to-HomePage' to="/">Return to Sign Up</Link><br></br>
+            <Link className='return-to-HomePage' to="/login">Return to Login</Link><br></br>
+            <Link className='return-to-HomePage' to="/all">User Profiles</Link><br></br><br></br>
           </div>
           </header>
           <main>
@@ -127,10 +136,13 @@ class App extends Component {
              <LoginPage login={this.login}
              loginOnChange={this.loginOnChange}/>
             )} />
-            {/* <Route exact path='/all' render={() => (
-              <UserProfile username={this.getUserList}/> 
+            <Route exact path='/all' render={() => (
+              <UserProfile getUserList={this.getUserList}
+              users={this.state.users}/> 
             )} />
-            <Route path='/all' render={() => (
+
+
+            {/* <Route path='/all' render={() => (
               <SessionPage sessions={this.getSessionList}/> 
             )} />
             
@@ -153,11 +165,3 @@ class App extends Component {
 }
 
 export default (App);
-
-
-//use this as template when adding routers in app.js
-
-// <Router history={browserHistory}>
-//   <Route path='/' component={MasterPage}>
-//   </Route>
-// </Router>

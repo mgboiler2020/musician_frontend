@@ -24,24 +24,24 @@
 
 
 
-<h6>Login</h6>
-        <form onSubmit={this.login}>
-          <input
-            name='username'
-            type='text'
-            placeholder='username'
-            value={this.state.username}
-            onChange={this.loginOnChange}
-          />
-          <input
-            name='password'
-            type='password'
-            placeholder='password'
-            value={this.state.password}
-            onChange={this.loginOnChange}
-          />
-          <input type='submit' value='Login' />
-        </form><br></br>
+// <h6>Login</h6>
+//         <form onSubmit={this.login}>
+//           <input
+//             name='username'
+//             type='text'
+//             placeholder='username'
+//             value={this.state.username}
+//             onChange={this.loginOnChange}
+//           />
+//           <input
+//             name='password'
+//             type='password'
+//             placeholder='password'
+//             value={this.state.password}
+//             onChange={this.loginOnChange}
+//           />
+//           <input type='submit' value='Login' />
+//         </form><br></br>
 //         <h6>Sign Up</h6>
 //         <form onSubmit={this.signup}>
 //           <input name='name' type='text' placeholder='name' onChange={this.loginOnChange}/><br></br>

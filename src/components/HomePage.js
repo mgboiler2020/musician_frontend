@@ -21,7 +21,7 @@ function HomePage (props) {
             <input name='location' type='text' placeholder='your location'  onChange={props.loginOnChange}/><br></br>
             <input name='skills' type='text' placeholder='list your skills'  onChange={props.loginOnChange}/><br></br>
             <input name='currentProjects' type='text' placeholder='current projects?'  onChange={props.loginOnChange}/><br></br>
-            <input name='pastProjects' type='text' placeholder='past projects?' onChange={props.loginOnChange}/><br></br>
+            <input name='pastProjects' type='text' placeholder='any ablbums?' onChange={props.loginOnChange}/><br></br>
             <input name='genre' type='text' placeholder='genre' onChange={props.loginOnChange}/>
             <br></br>
             <input type='submit' value='Signup'/>
