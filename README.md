@@ -61,21 +61,21 @@ This app is for musicians to find others to play with for various projects.  It 
 
 ### Basic MVP
 
-- [X] User can search for meals by category.
-- [X] User can search for meals by ingredients.
-- [X] User can search for meals by geographic area.
-- [X] User can click a button to get a random meal.
-- [X] Search results returned and rendered in the SearchResult page.
-- [X] Meal selected from SearchResult page will be rendered on the MealDisplay page
+- [ ] As a user I want to be able to create a profile and add my info. (and update and delete my info) CRUD (got partially there)
+- [X] As a user I want to be able to create a band
+- [ ] As a user I want to be able to search for bands by their name and see their information. (partially there)
+- [X] As a user I want to be able to create a session
+- [X] Include a new technology (Bootstrap)
 - [X] Styling included in MVP (consistent color scheme and fonts)
 
 ### Stretch goals
 
-- [ ] Adding Advertisements with another API
-- [ ] Create a user account
-- [ ] Create a new meal
-- [ ] Add a “Like” button-Add user comments
+- [ ] -	The app will also facilitate “want to buy” and “for sale” advertisements for music equipment and services (these ads to be created by the users).
+- [ ] As a user I want to be able to search for bands by their name and see their information.
+- [ ] As a user I want to be able to "join" a band
+- [ ] As a user I want to be able to search for users by their name, skill level, instrument, genres.
 - [ ] Make app mobile friendly
+- [ ] -	User can sign up for a Recording / Jam Session
 
 ## Technologies used
 
@@ -130,4 +130,18 @@ This app is for musicians to find others to play with for various projects.  It 
 
 * [Research CSS](https://www.w3schools.com/css/default.asp)
 
-* [Research React]  Used many of the exercise and lab repos we used throughout the course.
+* [Research React]  Utilized many of the exercise and lab repos we had throughout the course.
+
+* https://git.generalassemb.ly/jd-seir-6/sequelize-intro
+
+* https://git.generalassemb.ly/jd-seir-6/react-intro
+
+* https://git.generalassemb.ly/jd-seir-6/express-user-model
+
+* https://sequelize.org/master/manual/migrations.html
+
+* https://git.generalassemb.ly/jd-seir-6/react-router
+
+* https://git.generalassemb.ly/jd-seir-6/sequelize-associations
+
+* [NEW TECH] Bootstrap was used for buttons and a form.
