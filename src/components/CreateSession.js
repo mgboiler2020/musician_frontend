@@ -11,7 +11,7 @@ function CreateSession (props) {
         <div className='createSessionForm'>
         <br></br>
         <h4>Create a Session</h4>
-        <p>(Enter your info below)</p>
+        <p>(Enter your session info below)</p>
         <form onSubmit={props.createSession}>
             <input name='sessionName' type='text' placeholder='session name' onChange={props.loginOnChange}/><br></br>           
             <input name='sessionDate' type='text' placeholder='session date' onChange={props.loginOnChange}/><br></br>
@@ -20,7 +20,7 @@ function CreateSession (props) {
             <br></br>
             <br></br>
             <Button variant='success' type='submit'>
-              Create Band
+              Create Session
             </Button>
             {/* <input type='submit' value='Create Session'/> */}
             <br></br>

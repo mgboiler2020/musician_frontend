@@ -88,9 +88,13 @@ class App extends Component {
       username: this.state.username,
       password: this.state.password,
     };
-    console.log(data);
+    // console.log(data);
+    this.state.loggedIn = false
+    this.state.signedIn = false
     const response = await axios.post('http://localhost:3001/user/login' || 'https://musicianbook-project4.herokuapp.com/user/login', data);
-    console.log(response);
+    const foundUser = response;
+    // console.log(response);
+    this.props.history.push(`/UserDetail/${foundUser}`); 
   }
 
   signup = async () => {
@@ -216,4 +220,4 @@ class App extends Component {
   }
 }
 
-export default (App);
+export default withRouter(App);

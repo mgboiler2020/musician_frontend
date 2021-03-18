@@ -29,7 +29,7 @@ function HomePage (props) {
             <br></br>
             <br></br>
             <Button variant='success' type='submit'>
-              Create Band
+              Create User
             </Button>
             {/* <input type='submit' value='Signup'/> */}
         </form>

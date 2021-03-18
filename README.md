@@ -1,70 +1,124 @@
-# Getting Started with Create React App
+# musicianBook
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Table of Contents
 
-## Available Scripts
+- [Description](#description)
+- [Project Objective](#project-objective)
+- [Sample](#sample)
+- [MVP / Stretch Goals](#mvp-stretch-goals)
+- [Current Features / User Stories](#current-features)
+- [Technologies used](#technologies-used)
+- [Project takeaways](#project-takeaways)
+- [Links](#links)
+- [References](#references)
 
-In the project directory, you can run:
+- [Wireframes](#wireframes)
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Wireframes and ERD
+<br>
+Initial wireframe for the project:
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+## Creator
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+ Matt Guffy
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Description
 
-### `npm run eject`
+This app is for musicians to find others to play with for various projects.  It allows a user to create a profile which includes details such as location, which instruments they play, skill/experience level, current projects, preferred genres, and what they’re looking for (joining a new band, looking for a new member for an existing group, forming a band, session work, jam sessions, et cetera.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Project objective
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- HomePage (Login with existin user ID or sign up and create a new profile)
+- UserDetail (Displays your profile and user attributes, allows for editing and deleting your profile)
+- UserProfiles (Displays all the users and some of their attributes in a grid)
+- BandProfiles (Displays all the bands and some of their attribtes in a grid)
+- SessionPage (Displays all the existing sessions created by users)
+- CreateBand (Allows a user to create a band)
+- CreateSession (Allows a user to create a session entry)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Sample Code
 
-## Learn More
+ createBand = async () => {
+      const data = {
+        bandName: this.state.bandName,
+        showDates: this.state.showDates,
+        location: this.state.location,
+        currentProjects: this.state.currentProjects,
+        pastProjects: this.state.pastProjects,
+        genre: this.state.genre,
+      };
+      const response = await axios.post('http://localhost:3001/band/createBand' || 'https://musicianbook-project4.herokuapp.com/band/createBand', data);
+    }
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## MVP / Stretch Goals
 
-### Code Splitting
+### Basic MVP
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- [X] User can search for meals by category.
+- [X] User can search for meals by ingredients.
+- [X] User can search for meals by geographic area.
+- [X] User can click a button to get a random meal.
+- [X] Search results returned and rendered in the SearchResult page.
+- [X] Meal selected from SearchResult page will be rendered on the MealDisplay page
+- [X] Styling included in MVP (consistent color scheme and fonts)
 
-### Analyzing the Bundle Size
+### Stretch goals
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- [ ] Adding Advertisements with another API
+- [ ] Create a user account
+- [ ] Create a new meal
+- [ ] Add a “Like” button-Add user comments
+- [ ] Make app mobile friendly
 
-### Making a Progressive Web App
+## Technologies used
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+<p>
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/512px-React-icon.svg.png" alt="React logo" height="200" />
 
-### Advanced Configuration
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/120px-HTML5_logo_and_wordmark.svg.png" alt="HTML logo" height="200"/>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8TUvkaAZ51SEo89de6huZMjCxCEQsKhgpFg&usqp=CAU" alt="CSS logo" height="200"/>
 
-### Deployment
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/245px-Unofficial_JavaScript_logo_2.svg.png" alt="JS logo" height="200"/>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+<img src="https://surge.sh/images/logos/svg/surge-logo.svg" alt="surge logo" height="200"/>
 
-### `npm run build` fails to minify
+<img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/npm-logo-red.png" alt="npm logo" width="200"/>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<img src="https://git-scm.com/images/logos/downloads/Git-Logo-2Color.png" alt="Git logo" width="200"/>
+
+<img src="https://1000marcas.net/wp-content/uploads/2020/02/GitHub-Logo-600x338.jpg" alt="GitHub logo" height="200"/>
+
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyS9VY5uFYyc1xVD9-kmMnjR9DpsbuVpr3Xw&usqp=CAU" alt="GitHub logo" height="200"/>
+
+<img src="https://www.gstatic.com/youtube/img/branding/youtubelogo/svg/youtubelogo.svg" alt="GitHub logo" width="200"/>
+
+</p>
+
+## Project takeaways
+
+* API advertisement issues
+* Deere blocked a few of the APIs we wanted to utilze
+* Merge several people's code experience
+* Data inconsistency in the API response (null vs "")
+
+## Links
+
+* [GitHub repository](https://github.com/mgboiler2020/Meal_App/tree/master/recipes)
+
+* [Surge deployment](http://moh_recipes.surge.sh/)
+
+## References
+
+* [Research button animations](https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_buttons_animate3)
+
+* [Research transparency](https://stackoverflow.com/questions/11184117/transparent-css-background-color)
+
+* [Research image links](https://stackoverflow.com/questions/14294452/how-to-create-link-on-image-using-javascript)
