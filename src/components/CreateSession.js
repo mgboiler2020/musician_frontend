@@ -1,8 +1,5 @@
 import React from 'react';
-import axios from 'axios';
-import { Route, Link } from 'react-router-dom';
-// import styled, { keyframes } from 'styled-components';
-// import { pulse } from 'react-animations';
+import Button from 'react-bootstrap/Button';
 
 function CreateSession (props) {
     // console.log(props);
@@ -11,7 +8,7 @@ function CreateSession (props) {
       
 
       <div className='App'>
-      
+        <div className='createSessionForm'>
         <br></br>
         <h4>Create a Session</h4>
         <p>(Enter your info below)</p>
@@ -22,12 +19,15 @@ function CreateSession (props) {
             <input name='genre' type='text' placeholder='genre' onChange={props.loginOnChange}/>
             <br></br>
             <br></br>
-            <input type='submit' value='Create Session'/>
+            <Button variant='success' type='submit'>
+              Create Band
+            </Button>
+            {/* <input type='submit' value='Create Session'/> */}
             <br></br>
         </form>
       </div>
     </div>
-    
+   </div> 
   )
 }
 

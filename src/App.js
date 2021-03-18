@@ -133,34 +133,39 @@ class App extends Component {
       const response = await axios.post('http://localhost:3001/session/createSession' || 'https://musicianbook-project4.herokuapp.com/session/createSession', data);
     }
     
-    // selectUserById = async (e,id)=> {
-    //   e.preventDefault();
+    selectUserById = async (e,id)=> {
+      e.preventDefault();
      
-    //   const selectUser = await axios.get('http://localhost:3001/user/select' || 'https://musicianbook-project4.herokuapp.com/user/select', id);
-    //   this.setState({
-    //     selectUser: selectUser
+      const selectUser = await axios.get('http://localhost:3001/user/select' || 'https://musicianbook-project4.herokuapp.com/user/select', id);
+      this.setState({
+        selectUser: selectUser
           
-    //   })
-    //   this.props.history.push('/profile/' + id);
+      })
+      this.props.history.push('/profile/' + id);
       
-    // }
+    }
 
   render() {
     
       
     return (
       <div className='App'>
-        <header>
+        <header classname='header'>
+          
+          <div className='header1'>
           <h1>MusicianBook</h1>
-          <div className='header'>
-            <Link className='return-to-HomePage' to="/">Sign Up</Link><br></br>
-            <Link className='return-to-HomePage' to="/login">Login</Link><br></br>
-            <Link className='return-to-HomePage' to="/all">User Profiles</Link><br></br>
-            <Link className='return-to-HomePage' to="/bands">Band Profiles</Link><br></br>
-            <Link className='return-to-HomePage' to="/createBand">Create Band</Link><br></br>
-            <Link className='return-to-HomePage' to="/sessions">Sessions Page</Link><br></br>
-            <Link className='return-to-HomePage' to="/createSession">Create Session</Link><br></br>
+
             
+            <Link className='return-to-HomePage' to="/">Sign Up</Link>
+            <Link className='return-to-HomePage' to="/login">Login</Link>
+            
+            <Link className='return-to-HomePage' to="/all">User Profiles</Link>
+            <Link className='return-to-HomePage' to="/bands">Band Profiles</Link>
+            <Link className='return-to-HomePage' to="/sessions">Sessions Page</Link>
+            
+            <Link className='return-to-HomePage' to="/createBand">Create Band</Link>
+            <Link className='return-to-HomePage' to="/createSession">Create Session</Link>
+           
             <br></br>
           </div>
           </header>

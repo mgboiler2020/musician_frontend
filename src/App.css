@@ -1,6 +1,7 @@
 .App {
-  text-align: center;
+  text-align: justify;
   background-color: darkslategray;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .App-logo {
@@ -15,63 +16,160 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #061c44;
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
+  flex-direction: float left;;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: whitesmoke;
 }
 
 .App-link {
-  color: #61dafb;
+  color: #1c687d;
 }
 
-body {
-  background-color: darkmagenta;
-}
-
-header {
-  background-color: darkblue;
-}
 
 h1 {
-  color: li
+  color: white;
+  text-decoration-style: double 10px;
+  text-shadow: darkblue;
+  text-align: right;
+  text-justify: auto ;
+  margin-right: 20px;
+  margin-top: 10px;
+
+
+}
+
+h3 {
+  text-align: center;
+}
+
+h4 {
+  color: whitesmoke;
+  text-align: center;
+}
+
+.return-to-HomePage {
+  color: whitesmoke;
+  padding: 20px;
+  display: inline-flex;
+  text-align: right;
+  
+}
+
+.header {
+  width: 100%;
+  background-color: darkblue;
+  align-content:space-between;
+  border-top: 10px;
+  border-color: skyblue;
+  border-style: groove;
+}
+
+.header1 {
+  background-color: darkblue;
+  display:inline-block;
+  text-emphasis: bold;
+  margin-bottom: 20px;
+  width: 100%;
+  height: 110px; 
 }
 
 
+p {
+color: white;
+text-align: center;
+}
+
+form {
+  align-items: center;
+}
+
+.signupForm {
+  text-align: center;
+}
+
+.createSessionForm {
+  text-align: center;
+  margin-left: 30%;
+  margin-right: 30%
+}
+
+.createBandForm {
+  text-align: center;
+  margin-bottom: 100px;
+}
+
 .grid-list {
-  display: inline-block;
+  display: inline-grid;
   height: 250px;
-  width: 300px;
-  margin: 5px;
+  width: 350px;
+  margin: 20px;
   padding: 10px;
   text-align: left;
+  color: darkblue;
   border: white;
-  background-color: ;
+  border-style: double;
+  box-shadow: darkblue 40px;
+  background-color: lightskyblue;
+  font-weight: bold;
 }
 
 .session-grid-list {
-  display: inline-block;
+  display: inline-grid;
   height: 250px;
-  width: 300px;
-  margin: 5px;
+  width: 350px;
+  margin: 20px;
+  padding: 10px;
+  text-align: left;
+  color: darkblue;
+  border: white 5px;
+  border-style: double;
+  box-shadow: darkblue 40px;
+  background-color: lightskyblue;
+  font-weight: bold;
 }
 
 .bands-grid-list {
-  display: inline-block;
+  display: inline-grid;
   height: 250px;
-  width: 300px;
-  margin: 5px;
+  width: 350px;
+  margin: 20px;
+  padding: 10px;
+  text-align: left;
+  color: darkblue;
+  border: white 5px;
+  border-style: double;
+  box-shadow: darkblue 40px;
+  background-color: lightskyblue;
+  font-weight: bold;
 }
 
 .form-control {
-  width: 30% !important;
-  margin-left: 600px;
-  margin-right: 600px;
+  width: 33% !important;
+  margin-left: 33%;
+  margin-right: 33%;
  
+  }
+
+  form.label {
+    text-align: center !important;
+  }
+
+  .bootForm {
+    align-items: center !important;
+    text-align: center;
+    color: whitesmoke;
+    
+  }
+
+Link {
+    color: black;
+    align-items: space-around;
+    
   }
 
 @keyframes App-logo-spin {
