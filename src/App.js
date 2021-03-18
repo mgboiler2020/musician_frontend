@@ -50,7 +50,7 @@ class App extends Component {
     
   };
   getSessionList = async () => {
-    const response = await axios.get('http://localhost:3001/session/all' || 'https://musicianbook-project4.herokuapp.com/session/all');
+    const response = await axios.get('https://musicianbook-project4.herokuapp.com/session/all');
     // console.log(response);
     this.setState({
       sessions: response.data,
@@ -58,7 +58,7 @@ class App extends Component {
   };
  
   getBandList = async () => {
-    const response = await axios.get('http://localhost:3001/band/all' || 'https://musicianbook-project4.herokuapp.com/band/all');
+    const response = await axios.get('https://musicianbook-project4.herokuapp.com/band/all');
     // console.log(response);
     this.setState({
       bands: response.data,
@@ -66,7 +66,7 @@ class App extends Component {
   };
 
   getUserList = async () => {
-    const response = await axios.get('http://localhost:3001/user/all' || 'https://musicianbook-project4.herokuapp.com/user/all');
+    const response = await axios.get('https://musicianbook-project4.herokuapp.com/user/all');
     // console.log(response);
     this.setState({
       users: response.data
@@ -91,7 +91,7 @@ class App extends Component {
     // console.log(data);
     this.state.loggedIn = false
     this.state.signedIn = false
-    const response = await axios.post('http://localhost:3001/user/login' || 'https://musicianbook-project4.herokuapp.com/user/login', data);
+    const response = await axios.post('https://musicianbook-project4.herokuapp.com/user/login', data);
     const foundUser = response;
     // console.log(response);
     this.props.history.push(`/UserDetail/${foundUser}`); 
@@ -111,7 +111,7 @@ class App extends Component {
       genre: this.state.genre,
     };
     // console.log(data);
-    const response = await axios.post('http://localhost:3001/user/signup' || 'https://musicianbook-project4.herokuapp.com/user/signup', data);
+    const response = await axios.post('https://musicianbook-project4.herokuapp.com/user/signup', data);
     // console.log(response);
     }
 
