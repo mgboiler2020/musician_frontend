@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import { Route, Link } from 'react-router-dom';
+import Button from 'react-bootstrap/Button';
 // import styled, { keyframes } from 'styled-components';
 // import { pulse } from 'react-animations';
 
@@ -24,7 +25,9 @@ function CreateBand (props) {
             <input name='genre' type='text' placeholder='genre' onChange={props.loginOnChange}/>
             <br></br>
             <br></br>
-            <input type='submit' value='Create Band'/>
+            <Button variant='success' type='submit'>
+              Create Band
+            </Button>
             <br></br>
         </form>
       </div>

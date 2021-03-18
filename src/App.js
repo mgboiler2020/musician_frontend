@@ -50,7 +50,7 @@ class App extends Component {
     
   };
   getSessionList = async () => {
-    const response = await axios.get('http://localhost:3001/session/all');
+    const response = await axios.get('http://localhost:3001/session/all' || 'https://musicianbook-project4.herokuapp.com/session/all');
     // console.log(response);
     this.setState({
       sessions: response.data,
@@ -58,7 +58,7 @@ class App extends Component {
   };
  
   getBandList = async () => {
-    const response = await axios.get('http://localhost:3001/band/all');
+    const response = await axios.get('http://localhost:3001/band/all' || 'https://musicianbook-project4.herokuapp.com/band/all');
     // console.log(response);
     this.setState({
       bands: response.data,
@@ -66,7 +66,7 @@ class App extends Component {
   };
 
   getUserList = async () => {
-    const response = await axios.get('http://localhost:3001/user/all');
+    const response = await axios.get('http://localhost:3001/user/all' || 'https://musicianbook-project4.herokuapp.com/user/all');
     // console.log(response);
     this.setState({
       users: response.data
@@ -89,7 +89,7 @@ class App extends Component {
       password: this.state.password,
     };
     console.log(data);
-    const response = await axios.post('http://localhost:3001/user/login', data);
+    const response = await axios.post('http://localhost:3001/user/login' || 'https://musicianbook-project4.herokuapp.com/user/login', data);
     console.log(response);
   }
 
@@ -107,7 +107,7 @@ class App extends Component {
       genre: this.state.genre,
     };
     // console.log(data);
-    const response = await axios.post('http://localhost:3001/user/signup', data);
+    const response = await axios.post('http://localhost:3001/user/signup' || 'https://musicianbook-project4.herokuapp.com/user/signup', data);
     // console.log(response);
     }
 
@@ -120,7 +120,7 @@ class App extends Component {
         pastProjects: this.state.pastProjects,
         genre: this.state.genre,
       };
-      const response = await axios.post('http://localhost:3001/band/createBand', data);
+      const response = await axios.post('http://localhost:3001/band/createBand' || 'https://musicianbook-project4.herokuapp.com/band/createBand', data);
     }
 
     createSession = async () => {
@@ -130,20 +130,20 @@ class App extends Component {
         sessionDate: this.state.sessionDate,
         sessionLocation: this.state.sessionLocation,
       };
-      const response = await axios.post('http://localhost:3001/session/createSession', data);
+      const response = await axios.post('http://localhost:3001/session/createSession' || 'https://musicianbook-project4.herokuapp.com/session/createSession', data);
     }
     
-    selectUserById = async (e,id)=> {
-      e.preventDefault();
+    // selectUserById = async (e,id)=> {
+    //   e.preventDefault();
      
-      const selectUser = await axios.get('http://localhost:3001/user/select', id);
-      this.setState({
-        selectUser: response
+    //   const selectUser = await axios.get('http://localhost:3001/user/select' || 'https://musicianbook-project4.herokuapp.com/user/select', id);
+    //   this.setState({
+    //     selectUser: selectUser
           
-      })
-      this.props.history.push('/profile/' + id);
+    //   })
+    //   this.props.history.push('/profile/' + id);
       
-    }
+    // }
 
   render() {
     

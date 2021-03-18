@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background-color: darkslategray;
 }
 
 .App-logo {
@@ -28,12 +29,50 @@
   color: #61dafb;
 }
 
+body {
+  background-color: darkmagenta;
+}
+
+header {
+  background-color: darkblue;
+}
+
+h1 {
+  color: li
+}
+
+
 .grid-list {
   display: inline-block;
-  height: 225px;
-  width: 225px;
+  height: 250px;
+  width: 300px;
+  margin: 5px;
+  padding: 10px;
+  text-align: left;
+  border: white;
+  background-color: ;
+}
+
+.session-grid-list {
+  display: inline-block;
+  height: 250px;
+  width: 300px;
   margin: 5px;
 }
+
+.bands-grid-list {
+  display: inline-block;
+  height: 250px;
+  width: 300px;
+  margin: 5px;
+}
+
+.form-control {
+  width: 30% !important;
+  margin-left: 600px;
+  margin-right: 600px;
+ 
+  }
 
 @keyframes App-logo-spin {
   from {
