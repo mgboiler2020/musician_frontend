@@ -120,7 +120,7 @@ This app is for musicians to find others to play with for various projects.  It 
 
 * [Surge deployment](http://mb_project4.surge.sh/)
 
-* [Heroku deployment](h)ttps://musicianbook-project4.herokuapp.com/session/all)
+* [Heroku deployment](https://musicianbook-project4.herokuapp.com/session/all)
 
 ## References
 
