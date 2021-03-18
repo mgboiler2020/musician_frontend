@@ -98,27 +98,36 @@ This app is for musicians to find others to play with for various projects.  It 
 
 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyS9VY5uFYyc1xVD9-kmMnjR9DpsbuVpr3Xw&usqp=CAU" alt="GitHub logo" height="200"/>
 
-<img src="https://www.gstatic.com/youtube/img/branding/youtubelogo/svg/youtubelogo.svg" alt="GitHub logo" width="200"/>
+
 
 </p>
 
 ## Project takeaways
 
-* API advertisement issues
-* Deere blocked a few of the APIs we wanted to utilze
-* Merge several people's code experience
-* Data inconsistency in the API response (null vs "")
+* Initial plan seems to be way beyond MVP for most projects.
+
+* There WILL be errors and setbacks. Dealing with them calmly and efficiently becomes more difficult as deadline approaches.
+
+* Two repos and two deploy methods is more complex than I was expecting, but is common in real-world projects especially with as many stand-alone (but integrated) systems Deere uses.
+
+* Join tables require very careful planning prior to set up.
 
 ## Links
 
-* [GitHub repository](https://github.com/mgboiler2020/Meal_App/tree/master/recipes)
+* [GitHub repositories] (https://github.com/mgboiler2020/musicianbook_frontend)
 
-* [Surge deployment](http://moh_recipes.surge.sh/)
+* [GitHub repositories] (https://github.com/mgboiler2020/musicianbook_backend)
+
+* [Surge deployment](http://mb_project4.surge.sh/)
+
+* [Heroku deployment](h)ttps://musicianbook-project4.herokuapp.com/session/all)
 
 ## References
 
-* [Research button animations](https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_buttons_animate3)
+* [Research Bootstrap](https://react-bootstrap.github.io/components/forms/)
 
-* [Research transparency](https://stackoverflow.com/questions/11184117/transparent-css-background-color)
+* [Research React History.push](https://stackoverflow.com/questions/63404476/history-push-is-not-redirecting-to-specific-page-with-reactjs)
 
-* [Research image links](https://stackoverflow.com/questions/14294452/how-to-create-link-on-image-using-javascript)
+* [Research CSS](https://www.w3schools.com/css/default.asp)
+
+* [Research React]  Used many of the exercise and lab repos we used throughout the course.
